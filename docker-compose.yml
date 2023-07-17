@@ -39,3 +39,14 @@ services:
       - 3000:3000
     volumes:
       - ./data/grafana:/var/lib/grafana
+
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    environment:
+      -  MARIADB_ROOT_PASSWORD=PassWord@0
+      -  MARIADB_DATABASE=test
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mariadb:/var/lib/mysql
